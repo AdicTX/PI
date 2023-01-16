@@ -10,7 +10,6 @@ import LandingPage from "./componentes/LandingPage.jsx";
 import CreateDog from "./componentes/CreateDog";
 
 import "./App.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
 

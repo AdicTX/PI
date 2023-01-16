@@ -20,7 +20,7 @@
   height: 603px;    
   background: rgba(255, 255, 255, 0.44);
   backdrop-filter: blur(2px);
-/* Note: backdrop-filter has minimal browser support */
+
 
 border-radius: 16px;
 

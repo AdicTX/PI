@@ -95,7 +95,7 @@ border-radius: 16px;
   height: 603px;    
   background: rgba(32, 174, 92, 0.44);
   backdrop-filter: blur(2px);
-/* Note: backdrop-filter has minimal browser support */
+
 
 border-radius: 16px;
 
