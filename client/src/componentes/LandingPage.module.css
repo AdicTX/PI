@@ -1,0 +1,103 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@300&family=Questrial&family=Rubik:wght@300&display=swap');
+
+.background_div {
+
+    width: 1920px;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-image: url("../img/Group180.png");
+    background-size: 97.5%;
+    margin-top: -120px;
+    padding-top: -600px;
+}
+
+.header{
+    display: flex;
+    position: absolute;
+    width: 149px;
+    height: 44px;
+    left: 280px;
+    margin-top: -50px;
+    margin-bottom: 0%;
+}
+
+.h1{
+    position: absolute;
+    width: 490px;
+    height: 59px;
+    left: 9px;
+    top: 178px;
+    font-family: 'Fredoka One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 53px;
+    letter-spacing: 0.05em;
+
+    color: #124C5F;
+}
+
+.inicio{
+    position: absolute;
+    width: 490px;
+    height: 59px;
+    left: 234px;
+    top: 178px;
+    
+    font-family: 'Fredoka One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 53px;
+    letter-spacing: 0.05em;
+
+    color: #124C5F;
+}
+
+.texto_inicio {
+    position: absolute;
+    width: 432.13px;
+    height: 142.43px;
+    left: 9px;
+    
+    top: 246px;
+    margin-left: 30px;
+    font-family: 'Questrial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 137.9%;
+    /* or 26px */
+
+    letter-spacing: 0.05em;
+
+    color: #181817;
+}
+.boton_inicio{
+    position: absolute;
+    width: 192.69px;
+    height: 59.6px;
+    left: 9px;
+    margin-top: -40px;
+    top: 410px;
+    margin-left: 154px;
+    background: #124C5F;
+    border-radius: 20px;
+    border: 0px;
+
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+    
+}
+.boton_inicio:hover {
+    color: rgba(255, 170, 0, 1) !important;
+    box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+    transition: all 0.2s ease;
+}
+
