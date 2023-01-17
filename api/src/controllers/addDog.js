@@ -34,7 +34,7 @@ const addDog = async ({ name, height, weight, life_span, temperament, image }) =
   }).then((results) => results.toJSON());
 
   newDogFromDB.temperament = newDogFromDB.temperament.map((t) => t.name);
-
+  console.log("ACA ES", newDogFromDB);
   return newDogFromDB;
 };
 

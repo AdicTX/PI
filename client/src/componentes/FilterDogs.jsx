@@ -4,6 +4,8 @@ import styles from './FilterDogs.module.css'
 import { useSelector, useDispatch } from "react-redux";
 import {  getTemperaments, receivePost } from "../redux/actions/actionsDogs";
 const FilterDogs = () => {
+  const searchedDogs = useSelector((state) => state.reducerDogs.searchedDogs);
+  console.log("🚀 ~ file: Catalogo.jsx:20 ~ Catalogo ~ searchedDogs", searchedDogs)
   const temperaments = useSelector((state) => state.reducerDogs.temperaments);
   const dogs = useSelector((state) => state.reducerDogs.dogs);
   const dispatch = useDispatch();
@@ -35,7 +37,7 @@ const FilterDogs = () => {
     
   };
 
-  const filteredDogs = dogs.filter(dog =>dog.temperament && dog.temperament.some(temp => selectedOptions.includes(temp)));
+  const filteredDogs = searchedDogs && searchedDogs.length > 0 ? searchedDogs.filter(dog =>dog.temperament && dog.temperament.some(temp => selectedOptions.includes(temp))) :dogs.filter(dog =>dog.temperament && dog.temperament.some(temp => selectedOptions.includes(temp)));
 
   useEffect(() => {
     dispatch(receivePost(filteredDogs));
@@ -55,16 +57,16 @@ const FilterDogs = () => {
         </div>
         <div className={styles.container_Check3}>        
           <div className={styles.container_Check2}>
-            {temperaments ? temperaments.map(option => (
-              <li className={styles.li}  key={option.id}>
+            {temperaments ? temperaments.map(dog => (
+              <li className={styles.li}  key={dog.id}>
                 <input
                   type="checkbox"
-                  value={option.name}
-                  checked={selectedOptions.includes(option.name)}
+                  value={dog.name}
+                  checked={selectedOptions.includes(dog.name)}
                   onChange={handleOptionChange}
                   className={styles.check}
                 />
-                {option.name}
+                {dog.name}
                 
               </li>
             )) : <h4>no tiene</h4>}

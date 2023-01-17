@@ -78,8 +78,8 @@ top: 146px;
   justify-content: center;
   align-items: center;
   margin-bottom: 5rem;
-  font-size: 12px;
-  gap: 5px;
+  font-size: 10px;
+  gap: -3px;
   font-family: 'Rubik';
   line-height: 5px;
   margin-top: 10px;
@@ -117,5 +117,8 @@ top: 146px;
 
 .DivPagi{
   margin-left: 600px;
-  }
+}
+
   
+
+ 

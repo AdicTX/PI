@@ -39,14 +39,12 @@ const CreateDog = () => {
 
   const handleChange = (e) => {
     var { name, value } = e.target;
-    if (name === "active" && value === "true") {
-      value = true;
-    } else if (name === "active" && value === "false") {
-      value = false;
-    }
+   
     if (name === "image") {
       setImageDog(e.target.files[0]);
+      
     }
+    
     setDogsSeleccionado((prevState) => ({
       ...prevState,
       [name]: value,
@@ -58,13 +56,21 @@ const CreateDog = () => {
       
   };
 
+  
+
   const handleOptionChange = (changeEvent) => {
     setSelectedOptions(
         selectedOptions.includes(changeEvent.target.value) 
             ? selectedOptions.filter(so => so !== changeEvent.target.value)
             : [...selectedOptions, changeEvent.target.value]
     );
-    
+    setDogsSeleccionado((prevState) => ({
+      ...prevState,      
+      temperament: selectedOptions,
+      height: `${hmin} - ${hmax}`,
+      weight:  `${wmin} - ${wmax}`,
+      life_span:  `${smin} - ${smax}`,
+    }));
   };
 
   const dogIsNotSame = dogs.filter(e => e.name === DogsSeleccionado.name )
@@ -89,7 +95,7 @@ const CreateDog = () => {
       formErrors.height = "height is invalid";
     }
       else if (hmin > hmax) {
-        formErrors.height = "max number should be greater";
+        formErrors.height = "max should be greater";
       }
       else if (hmin > 99 || hmax > 99 || hmin < 0 || hmax < 0) {
         formErrors.height = "Number should be between 0 and 99";
@@ -100,7 +106,7 @@ const CreateDog = () => {
       formErrors.weight = "weight is invalid";
     }
     else if (wmin > wmax) {
-      formErrors.weight = "max number should be greater";
+      formErrors.weight = "max should be greater";
     }
     else if (wmin > 99 || wmax > 99 || wmin < 0 || wmax < 0) {
       formErrors.weight = "Number should be between 0 and 99";
@@ -111,7 +117,7 @@ const CreateDog = () => {
       formErrors.life_span = "life span is invalid";
     }
     else if (smin > smax) {
-      formErrors.life_span = "max number should be greater";
+      formErrors.life_span = "max should be greater";
     }
     else if (smin > 99 || smax > 99 || smin < 0 || smax < 0) {
       formErrors.life_span = "Number should be between 0 and 99";
@@ -132,7 +138,7 @@ const CreateDog = () => {
         weight:  `${wmin} - ${wmax}`,
         life_span:  `${smin} - ${smax}`,
       }));
-      imageUpload();
+       imageUpload();
       console.log("dogs", DogsSeleccionado)
       dispatch(postDogs(DogsSeleccionado));
       setSuccess(true)
@@ -164,6 +170,8 @@ const CreateDog = () => {
         "image": `http://181.127.189.247:8081/Vehiculos/${imageDog.name}`,
       }));
     }
+   
+    
   }, [imageDog]);
 
   useEffect(() => {
@@ -174,9 +182,7 @@ const CreateDog = () => {
     dispatch(getTemperaments());
   }, [dispatch]);
   
-  useEffect(() => {
-    dispatch(getDogs());
-  }, [dispatch]);
+
  
 
 
@@ -189,7 +195,7 @@ const CreateDog = () => {
                     <div>
                       <img src={successImg} alt="" />
                       <p>Success</p>
-                      <div><p className={styles.pE}>Thank you submit, reload the page for another submit.</p></div>
+                      <div><p className={styles.pE}>Thank you for your submit, reload the page for another submit.</p></div>
                     </div>
                   </div>
               </div>

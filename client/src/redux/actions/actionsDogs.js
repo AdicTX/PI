@@ -44,3 +44,9 @@ export const receivePost = (payload) => {
     payload,
   };
 };
+export const searchDogsACT = (payload) => {
+  return {
+    type: "SEARCH_DOGS",
+    payload,
+  };
+};

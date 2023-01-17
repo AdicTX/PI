@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Nav from "./componentes/Nav.jsx";
-
+import NavCreate from "./componentes/NavCreate";
 import Catalogo from "./componentes/Catalogo.jsx";
 import Dog from "./componentes/Dog.jsx";
 import FilterDogs from "./componentes/FilterDogs.jsx";
@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Route exact path="/home" render={() => <Nav onSearch="onSearch" />} />
       <Route path="/dogs" render={() => <Nav onSearch="onSearch" />} />
-      <Route path="/admin" render={() => <Nav onSearch="onSearch" />} />
+      <Route path="/admin/dogs" render={() => <NavCreate />} />
       <div className="home">
         <div className="home">
           <Route exact path="/home" component={FilterDogs} />

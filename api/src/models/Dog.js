@@ -23,10 +23,6 @@ module.exports = (sequelize) => {
             args: /^[a-zA-Z\s]+$/,
             msg: "Name format is invalid.",
           },
-          len: {
-            args: [3, 40],
-            msg: "Name length must be between 3 and 40 characters.",
-          },
         },
       },
       height: {

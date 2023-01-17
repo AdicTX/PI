@@ -2,6 +2,7 @@ const initialState = {
   dogs: [],
   temperaments: [],
   sortedDogs: [],
+  searchedDogs: [],
 };
 
 const ReducerDogs = (state = initialState, actions) => {
@@ -21,6 +22,12 @@ const ReducerDogs = (state = initialState, actions) => {
       return {
         ...state,
         sortedDogs: actions.payload,
+      };
+
+    case "SEARCH_DOGS":
+      return {
+        ...state,
+        searchedDogs: actions.payload,
       };
 
     case "GET_TEMPERAMENTS":
